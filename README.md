@@ -26,31 +26,22 @@ https://github.com/kuc-arc-f/express_api_12chat
 npm install
 ```
 ***
-* .env
-* API_URL
+* .env , PUBLIC_API_URL setting
 
 ```
-API_URL: 'http://localhost',
+PUBLIC_API_URL: 'http://localhost',
 ```
 
 ***
-### Start server
-* start :
+### Start Server
+
+* Start :
 
 ```
 yarn dev
 ```
 
 * open: http://localhost:5173/
-
-***
-### build
-
-* SSG build
-
-```
-yarn build
-```
 
 ***
 ### Blog:
