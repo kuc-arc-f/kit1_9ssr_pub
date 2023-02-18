@@ -63,9 +63,11 @@ console.log(key, json.data);
     <hr />
     <button on:click={login} class="btn btn-primary">Login</button>
     <hr />
+    <a href="/users/create">[ User-Create ]
+    </a>
+    <hr />
+
 </div>
 
 <!--
-    <a href="/users/create">[ User-Create ]
-    </a>
 -->

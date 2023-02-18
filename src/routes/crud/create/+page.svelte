@@ -70,7 +70,7 @@ console.log(url);
 
 <!-- MarkUp -->
 <div class="container my-2">
-	<a href={`/chats`} class="btn">[ Back ]
+	<a href={`/crud`} class="btn">[ Back ]
 	</a>		
 	<h1>Create</h1>
 	<hr />
