@@ -4,6 +4,9 @@
 </svelte:head>
 
 <script lang="ts">
+import { goto } from '$app/navigation';
+import LibAuth from '$lib/LibAuth';
+
 /** @type {import('./$types').PageData} */
 export let data: any;
 console.log(data);
@@ -13,7 +16,23 @@ console.log(data);
  *
  * @return
  */ 
-
+ const startProc = async function () {
+	try {
+		const validLogin: boolean = await LibAuth.validLogin();
+//console.log("#test1=" + Date.now() );
+//console.log("#validLogin=" + validLogin);
+		if(!validLogin) {
+			goto("/login");
+		}
+	} catch (e) {
+      console.error(e);
+    }	
+}
+console.log("#start: /test");
+if(typeof(window) !== "undefined"){
+	console.log("typeof=", typeof(window));
+	startProc();
+}
 </script>
 
 <div class="container my-2">

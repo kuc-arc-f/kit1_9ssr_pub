@@ -13,6 +13,26 @@ export let data;
 console.log(data);
 
 /**
+ * start proc
+ * @param
+ *
+ * @return
+ */ 
+ const startProc = async function () {
+	try {
+		const validLogin: boolean = await LibAuth.validLogin();
+//console.log("#validLogin=" + validLogin);
+		if(!validLogin) {
+			goto("/login");
+		}
+	} catch (e) {
+      console.error(e);
+    }	
+}
+if(typeof(window) !== "undefined"){
+	startProc();
+}
+/**
  * addPost
  * @param
  *

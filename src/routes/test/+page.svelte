@@ -4,10 +4,35 @@
 </svelte:head>
 
 <script lang="ts">
-//import LibDbSession from '$lib/LibDbSession';
+import { goto } from '$app/navigation';
+import LibAuth from '$lib/LibAuth';
+/**
+ * start proc
+ * @param
+ *
+ * @return
+ */ 
+const startProc = async function () {
+	try {
+		const validLogin: boolean = await LibAuth.validLogin();
+//console.log("#test1=" + Date.now() );
+//console.log("#validLogin=" + validLogin);
+		if(!validLogin) {
+			goto("/login");
+		}
+	} catch (e) {
+      console.error(e);
+    }	
+}
+console.log("#start: /test");
+if(typeof(window) !== "undefined"){
+	console.log("typeof=", typeof(window));
+	startProc();
+}
 //
 const test1 = async function () {
 	try {
+console.log("#test1=" + Date.now() );
 	} catch (e) {
       console.error(e);
     }
