@@ -26,7 +26,7 @@ https://github.com/kuc-arc-f/express_api_12chat
 npm install
 ```
 ***
-* src/lib/LibConfig.ts
+* .env
 * API_URL
 
 ```
