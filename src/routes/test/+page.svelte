@@ -6,6 +6,8 @@
 <script lang="ts">
 import { goto } from '$app/navigation';
 import LibAuth from '$lib/LibAuth';
+import { PUBLIC_API_URL } from '$env/static/public'
+console.log("PUBLIC_API_URL=", PUBLIC_API_URL);
 /**
  * start proc
  * @param

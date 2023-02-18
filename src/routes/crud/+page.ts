@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 import LibAuth from '$lib/LibAuth';
 import LibConfig from '$lib/LibConfig';
 import LibDbSession from '$lib/LibDbSession';
-//console.log(LibConfig.API_URL);
+import { PUBLIC_API_URL } from '$env/static/public'
 
 //type
 type TPostItem = {
@@ -16,12 +16,13 @@ type TPostItem = {
 const getList = async function (): Promise<any> 
 {
   try {   
+//console.log("PUBLIC_API_URL=", PUBLIC_API_URL);    
     let postItem: any[] = [];
-    const url = LibConfig.API_URL + "/chats/index";
+    const url = PUBLIC_API_URL + "/chats/index";
     const response = await fetch(url);
     const json = await response.json();
     postItem = json.data;
-console.log(postItem);
+//console.log(postItem);
     return postItem;
   } catch (e) {
     console.error(e);

@@ -7,7 +7,7 @@
 import { goto } from '$app/navigation';
 import LibDbSession from '$lib/LibDbSession';
 import LibConfig from '$lib/LibConfig';
-
+import { PUBLIC_API_URL } from '$env/static/public'
 /**
 * login
 * @param
@@ -16,6 +16,7 @@ import LibConfig from '$lib/LibConfig';
 */ 
 const login = async function () {
     try {
+//console.log("PUBLIC_API_URL=", PUBLIC_API_URL);
         const password = document.querySelector<HTMLInputElement>('#password');
         const email = document.querySelector<HTMLInputElement>('#email');
         const item = {
@@ -23,7 +24,7 @@ const login = async function () {
             password: password?.value,
         }
 //console.log(item); 
-        const res = await fetch(LibConfig.API_URL + "/users/login", {
+        const res = await fetch(PUBLIC_API_URL + "/users/login", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},      
             body: JSON.stringify(item),
@@ -52,6 +53,7 @@ console.log(key, json.data);
 <!-- MarkUp -->
 <div class="container">
     <h1>Login</h1>
+    <hr />
     <div class="form-group col-sm-6">
         <label>Email:
         </label><br />

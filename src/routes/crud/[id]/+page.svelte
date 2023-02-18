@@ -7,7 +7,6 @@
 import LibConfig from '$lib/LibConfig';
 import LibAuth from '$lib/LibAuth';
 import LibCommon from '$lib/LibCommon';
-import LibChatPost from '$lib/LibChatPost';
 import Chat from '../Chat';
 
 //

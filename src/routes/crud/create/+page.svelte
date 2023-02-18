@@ -7,6 +7,7 @@
 import LibConfig from '$lib/LibConfig';
 import LibAuth from '$lib/LibAuth';
 import { goto } from '$app/navigation';
+import { PUBLIC_API_URL } from '$env/static/public'
 
 /** @type {import('./$types').PageData} */
 export let data;
@@ -40,10 +41,10 @@ if(typeof(window) !== "undefined"){
  */ 
 const addPost = async function () {
 	try{
+//console.log("PUBLIC_API_URL=", PUBLIC_API_URL);
 		const name = document.querySelector<HTMLInputElement>('#name');
-		const url = LibConfig.API_URL + "/chats/create";
-//console.log(name?.value);
-console.log(url);
+		const url = PUBLIC_API_URL + "/chats/create";
+//console.log(url);
 		const item = {
 		name: name?.value,
 		content : '',

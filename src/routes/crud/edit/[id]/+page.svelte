@@ -7,6 +7,7 @@
 import LibSqlite from '$lib/LibSqlite';
 import LibStorage from '$lib/LibStorage';
 import LibConfig from '$lib/LibConfig';
+import { PUBLIC_API_URL } from '$env/static/public'
 
 /** @type {import('./$types').PageData} */
 export let data: any;
@@ -27,7 +28,7 @@ const savePost = async function () {
 			id: Number(data.id),
 		}
 //console.log(item);
-		const res = await fetch(LibConfig.API_URL + "/chats/update", {
+		const res = await fetch(PUBLIC_API_URL + "/chats/update", {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json', },
 			body: JSON.stringify(item),
@@ -55,7 +56,8 @@ async function deleteItem(){
 			id: Number(data.id),
 		}
 	//console.log(item);
-		const response = await fetch(LibConfig.API_URL + "/chats/delete", {
+console.log("PUBLIC_API_URL=", PUBLIC_API_URL);
+		const response = await fetch(PUBLIC_API_URL + "/chats/delete", {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json', },
 			body: JSON.stringify(item),

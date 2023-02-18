@@ -1,5 +1,6 @@
 import LibDbSession from '$lib/LibDbSession';
 import LibConfig from '$lib/LibConfig';
+import { PUBLIC_API_URL } from '$env/static/public'
 //
 const Chat = {
   /**
@@ -11,8 +12,9 @@ const Chat = {
   get : async function(id: number) : Promise<any>
   {
     try{
+//console.log("PUBLIC_API_URL=", PUBLIC_API_URL);
       let item: any = {};
-      const url = LibConfig.API_URL + "/chats/show/" + String(id);
+      const url = PUBLIC_API_URL + "/chats/show/" + String(id);
       const response = await fetch(url);
       const json = await response.json();
       item = json.data;
@@ -36,7 +38,7 @@ const Chat = {
           chatId: chatId,
           userId : 0,
         }
-        const url = LibConfig.API_URL + "/chat_posts/index";
+        const url = PUBLIC_API_URL + "/chat_posts/index";
         const body = JSON.stringify(item);
         const res = await fetch(url, {
           method: 'POST',
