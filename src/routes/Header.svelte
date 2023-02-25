@@ -31,6 +31,12 @@
 			<li aria-current={$page.url.pathname === '/crud' ? 'page' : undefined}>
 				<a href="/crud">[ Crud ]</a>
 			</li>			
+			<li aria-current={$page.url.pathname === '/store' ? 'page' : undefined}>
+				<a href="/store">[ store ]</a>
+			</li>
+			<li aria-current={$page.url.pathname === '/store3' ? 'page' : undefined}>
+				<a href="/store3">[ store3 ]</a>
+			</li>						
 		</ul>
 		<svg viewBox="0 0 2 3" aria-hidden="true">
 			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
