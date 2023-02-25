@@ -29,4 +29,6 @@ arrData.subscribe(value => {
 	<h3>ShowStore</h3>
 	<p>name : {chatDataValue.name}
 	</p>
+
+
 </div>

@@ -31,10 +31,16 @@ console.log("setShowIetm=", id);
 	if(arrDataValue.length > 0) {
 		const rows = arrDataValue.filter(item => (item.id === id));
 //console.log(arrDataValue[id]);
-//console.log(rows[0]);
-		const obj = {name: rows[0].name};
-console.log(obj);
+		const rowOne = rows[0];
+		const obj = {
+			id: rowOne.id,
+			name: rowOne.name
+		};
+//console.log(obj);
 		showData.update(value => obj);
+		//modal
+		const btn = document.getElementById("modal_open_button");
+		btn?.click();		
 	}
 }
 </script>
@@ -56,10 +62,5 @@ console.log(obj);
 	<ShowStore />
 </div>
 
-<!--
-//
-arrDataValue = [
-	{id: 1, name: "name_1"},
-	{id: 2, name: "name_2"},
-];	
+<!--	
 -->
